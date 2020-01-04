@@ -75,6 +75,9 @@ body, p {
 	padding-left: 1.25rem;
 }
 
+.hidden {
+	display: none;
+}
 h1 {
 	color: #f1f1f8;
 	font: 700 2.5rem/2.875rem "Montserrat", sans-serif;
