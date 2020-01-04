@@ -257,9 +257,9 @@
         csubmitMSG(false, "Please fill all fields!");
       } else {
         // everything looks good!
-        event.preventDefault();
+        // event.preventDefault();
         // csubmitForm();
-        $("contactForm").submit(function(e) {
+        $("#contactForm").submit(function(e) {
           e.preventDefault();
 
           var $form = $(this);
