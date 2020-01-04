@@ -248,19 +248,27 @@
   });
 
   /* Contact Form */
-  //   $("#contactForm")
-  //     .validator()
-  //     .on("submit", function(event) {
-  //       if (event.isDefaultPrevented()) {
-  //         // handle the invalid form...
-  //         cformError();
-  //         csubmitMSG(false, "Please fill all fields!");
-  //       } else {
-  //         // everything looks good!
-  //         event.preventDefault();
-  //         // csubmitForm();
-  //       }
-  //     });
+  $("#contactForm")
+    .validator()
+    .on("submit", function(event) {
+      if (event.isDefaultPrevented()) {
+        // handle the invalid form...
+        cformError();
+        csubmitMSG(false, "Please fill all fields!");
+      } else {
+        // everything looks good!
+        event.preventDefault();
+        // csubmitForm();
+        $("contactForm").submit(function(e) {
+          e.preventDefault();
+
+          var $form = $(this);
+          $.post($form.attr("action"), $form.serialize()).then(function() {
+            alert("Thank you!");
+          });
+        });
+      }
+    });
 
   function csubmitForm() {
     // initiate variables with form content
