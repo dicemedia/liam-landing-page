@@ -424,10 +424,17 @@
                 <!-- Privacy Form -->
                 <div class="form-container">
                   <form
-                    id="privacyForm"
-                    data-toggle="validator"
-                    data-focus="false"
+                    name="privacyForm"
+                    method="POST"
+                    data-netlify="true"
+                    netlify-honeypot="superbot-field"
                   >
+                    <p class="hidden">
+                      <label
+                        >Don’t fill this out if you're human:
+                        <input name="superbot-field"
+                      /></label>
+                    </p>
                     <div class="form-group">
                       <input
                         type="text"
